@@ -5,12 +5,12 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
-public class Fr {
-    static class FastScanner {
+public class WatermelonCodeforces {
+    static class FastReader {
         private BufferedReader br;
         private StringTokenizer st;
 
-        public FastScanner() {
+        public FastReader() {
             br = new BufferedReader(new InputStreamReader(System.in));
         }
 
@@ -63,11 +63,13 @@ public class Fr {
             bw.write(String.valueOf(object));
             bw.newLine();
         }
-        public void flush() throws IOException{
+
+        public void flush() throws IOException {
             bw.flush();
         }
+
         @Override
-        public void close() throws IOException{
+        public void close() throws IOException {
             bw.flush();
             bw.close();
         }
@@ -75,6 +77,13 @@ public class Fr {
     }
 
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        FastReader fr = new FastReader();
+        int pesoMelancia = fr.nextInt();
+        FastWriter fw = new FastWriter();
+        pesoMelancia = (pesoMelancia == 2) ? 1 : pesoMelancia;
+        String resultado = (pesoMelancia % 2 == 0) ? "YES" : "NO";
+
+        fw.print(resultado);
+        fw.close();
     }
 }
